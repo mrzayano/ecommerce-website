@@ -4,6 +4,9 @@ const bcrypt = require('bcrypt');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const cors = require("cors");
+
+app.use(cors());
 
 // Middleware
 app.use(express.json());
@@ -28,6 +31,10 @@ const User = mongoose.model('User', userSchema);
 // Routes
 app.get('/', (req, res) => {
   res.send('Backend is running!');
+});
+
+app.get("/api/data", (req, res) => {
+  res.json({ message: "Hello from the backend!", value: 42 });
 });
 
 app.post('/register', async (req, res) => {
