@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,6 +10,7 @@ import AIDesignPage from './pages/AIDesignPage';
 import RentalServicePage from './pages/RentalServicePage';
 import LaundryServicePage from './pages/LaundryServicePage';
 import SearchPage from './pages/SearchPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
             <Route path="/ai-design" element={<AIDesignPage />} />
             <Route path="/rental-service" element={<RentalServicePage />} />
             <Route path="/laundry-service" element={<LaundryServicePage />} />
+            <Route path='/login' element={<LoginPage />} />
           </Routes>
         </main>
         <Footer />
